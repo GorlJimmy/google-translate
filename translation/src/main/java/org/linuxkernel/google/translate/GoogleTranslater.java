@@ -61,19 +61,12 @@ public class GoogleTranslater implements Translater {
 					.data("sl", srcLang).data("ie", "UTF-8")
 					.data("oe", "UTF-8").data("text", text)
 					.data("tl", targetLang).userAgent(Config.USER_AGENT)
-					.cookie("Cookie", Config.COOKIE).timeout(2000000000).post();
+					.cookie("Cookie", Config.COOKIE).timeout(2000000).post();
 			Element element = document.getElementById(ID_RESULTBOX);
 			return element.text();
 		} catch (IOException e) {
-			LOG.error("翻译出错", e);
+			LOG.error("translate error: ", e);
 		}
 		return null;
-	}
-
-	public static void main(String[] args) {
-		Translater translater = new GoogleTranslater();
-		String text = "杨尚川的开源项目APDPlat荣获\"2013年度优秀开源项目\"!";
-		LOG.info("翻译：" + text);
-		LOG.info(translater.translate(text, "en"));
 	}
 }
