@@ -1,4 +1,4 @@
-package org.linuxkernel.google.translate;
+package org.linuxkernel.translate;
 
 public interface Translater {
     public String translate(final String text, final String targetLang);

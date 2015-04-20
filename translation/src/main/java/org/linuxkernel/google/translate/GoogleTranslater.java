@@ -6,6 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.linuxkernel.google.translate.config.Config;
+import org.linuxkernel.translate.Translater;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,8 +53,7 @@ public class GoogleTranslater implements Translater {
 
 	private String execute(final String text, final String srcLang,
 			final String targetLang) {
-		if (GoogleLanguage.fromString(srcLang) == null
-				|| GoogleLanguage.fromString(targetLang) == null) {
+		if (GoogleLanguage.fromString(srcLang) == null|| GoogleLanguage.fromString(targetLang) == null) {
 			throw new RuntimeException("Google not support language");
 		}
 		try {
