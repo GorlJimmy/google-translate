@@ -95,20 +95,11 @@ public enum GoogleLanguage {
     WELSH("cy"),
     YIDDISH("yi");
 
-    /**
-     * 谷歌的当前语言的字符串表示形式。
-     */
     private final String language;
 
-    /**
-     * 构造函数
-     *
-     * @param 语言标识符。
-     */
     private GoogleLanguage(final String pLanguage) {
         language = pLanguage;
     }
-
     public static GoogleLanguage fromString(final String pLanguage) {
         for (GoogleLanguage lang : values()) {
             if (pLanguage.equals(lang.toString())) {
@@ -118,11 +109,6 @@ public enum GoogleLanguage {
         return null;
     }
 
-    /**
-     * 返回的字符串表示这种语言。
-     *
-     * @return 这种语言的字符串表示形式。
-     */
     @Override
     public String toString() {
         return language;
